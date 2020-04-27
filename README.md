@@ -1,1 +1,1 @@
-# js_training
+Follow to https://flexwappa.github.io/js_training/
