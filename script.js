@@ -23,7 +23,7 @@ const isValidForm = (nums, type) => {
 
 const reseter = (event) => {
     const parent = event.target.closest('.the_form')
-    const result = parent.querySelector("h4")
+    const result = parent.querySelector("h5")
     result.innerText = "Результат :"
 }
 
