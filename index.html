@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Js-training</title>
+    <style>
+        /*.flexible {*/
+        /*    display: flex;*/
+        /*}*/
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn:hover {
+            background: #0062CC;
+            transition: 0.6s ease-in;
+        }
+
+        .card_body {
+            max-height: 0;
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-info pt-3">
+<div class="container bg-light pr-5 pl-5 rounded pb-3">
+
+<!--------------------------HEADER------------------------->
+    <div class="header row text-center pt-3">
+        <div class="col">
+            <h2>My mini programs</h2>
+        </div>
+    </div>
+<!--------------------------CARD-1------------------------->
+    <div class="container the_card">
+        <div class="row card_header text-center mt-4 bg-primary">
+            <div class="card_button rounded p-2 col-12">
+                <button type="button" class="btn header_btn text-white"><h3>Вносит понимание является ли число
+                    простым</h3></button>
+            </div>
+        </div>
+        <div id="1" class="row card_body">
+            <form class="the_form p-3 border border-dark col-12 rounded">
+                <label class="ml-5">Введите число</label>
+                <div class="col-8 col-sm-8 col-md-6 col-lg-3 p-0 pr-5 d-flex justify-content-between">
+                    <div class="col-5 p-0">
+                        <small class="form-text text-muted pb-1 ml-3">Число</small>
+                        <input type="tel" class="form-control col-lg-10">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="reset" onclick="reseter(event)" class="btn text-white border btn-dark mt-4">
+                            Очистить
+                        </button>
+                    </div>
+                </div>
+                <h5 class="mt-3">Результат :&nbsp;&nbsp;</h5>
+                <button type="button" onclick="isPrime(event)" class="btn text-white border btn-primary mt-3">Найти
+                </button>
+            </form>
+        </div>
+    </div>
+<!--------------------------CARD-2------------------------->
+    <div class="container the_card">
+        <div class="row card_header text-center mt-4 bg-primary">
+            <div class="card_button rounded p-2 col-12">
+                <button type="button" class="btn header_btn text-white"><h3>Находит наибольший общий делитель 2x
+                    чисел</h3></button>
+            </div>
+        </div>
+        <div id="2" class="row card_body">
+            <form class="the_form p-3 border border-dark col-12 rounded">
+                <label class="ml-5">Введите 2 числа</label>
+                <div class="col-8 col-sm-8 col-md-6 col-lg-3 p-0 pr-5 d-flex justify-content-between">
+                    <div class="col-5 p-0">
+                        <small class="form-text text-muted pb-1 ml-2">Число №1</small>
+                        <input type="tel" class="form-control col-lg-10">
+                        <small class="form-text text-muted pb-1 ml-2">Число №2</small>
+                        <input type="tel" class="form-control col-lg-10">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="reset" onclick="reseter(event)" class="btn text-white border btn-dark mt-4">
+                            Очистить
+                        </button>
+                    </div>
+                </div>
+                <h5 class="mt-3">Результат :&nbsp;&nbsp;</h5>
+                <button type="button" onclick="smallestDivisor(event)"
+                        class="btn text-white border btn-primary mt-3">Найти
+                </button>
+            </form>
+        </div>
+    </div>
+<!--------------------------CARD-3------------------------->
+    <div class="container the_card">
+        <div class="row card_header text-center mt-4 bg-primary">
+            <div class="card_button rounded p-2 col-12">
+                <button type="button" class="btn header_btn text-white">
+                    <h3>Находит сумму последовательности целых чисел</h3></button>
+            </div>
+        </div>
+        <div id="3" class="row card_body">
+            <form class="the_form p-3 border border-dark col-12 rounded">
+                <label class="ml-5">Задайте последовательность</label>
+                <small class="form-text text-muted pb-2 ml-4">
+                    Последовательность задается двумя значениями:
+                    Начало, Конец.
+                    Например: Начало = 2 и Конец = 6 дают нам такую последовательность 2, 3, 4, 5, 6.
+                    Сумма такой последовательности будет: 20.
+                </small>
+                <div class="col-8 col-sm-8 col-md-6 col-lg-3 p-0 pr-5 d-flex justify-content-between">
+                    <div class="col-5 p-0">
+                        <small class="form-text text-muted pb-1 ml-3">Начало</small>
+                        <input type="tel" class="form-control col-lg-10">
+                        <small class="form-text text-muted pb-1 ml-3">Конец</small>
+                        <input type="tel" class="form-control col-lg-10">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="reset" onclick="reseter(event)" class="btn text-white border btn-dark mt-4">
+                            Очистить
+                        </button>
+                    </div>
+                </div>
+                <h5 class="mt-3">Результат :&nbsp;&nbsp;</h5>
+                <button type="button" onclick="sequenceSum(event)" class="btn text-white border btn-primary mt-3">
+                    Найти
+                </button>
+            </form>
+        </div>
+    </div>
+<!--------------------------CARD-4------------------------->
+    <div class="container the_card">
+        <div class="row card_header text-center mt-4 bg-primary">
+            <div class="card_button rounded p-2 col-12">
+                <button type="button" class="btn header_btn text-white"><h5>Считает сумму всех
+                    натуральных чисел, меньших чем "Число №1", которые делятся на "Число №2" или "Число №3" без
+                    остатка </h5></button>
+            </div>
+        </div>
+        <div id="4" class="row card_body">
+            <form class="the_form p-3 border border-dark col-12 rounded">
+                <label class="ml-5">Введите числа</label>
+                <div class="col-8 col-sm-8 col-md-6 col-lg-3 p-0 pr-5 d-flex justify-content-between">
+                    <div class="col-5 p-0">
+                        <small class="form-text text-muted pb-1 ml-2">Число №1</small>
+                        <input type="tel" class="form-control col-lg-10">
+                        <small class="form-text text-muted pb-1 ml-2">Число №2</small>
+                        <input type="tel" class="form-control col-lg-10">
+                        <small class="form-text text-muted pb-1 ml-2">Число №3</small>
+                        <input type="tel" class="form-control col-lg-10">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="reset" onclick="reseter(event)" class="btn text-white border btn-dark mt-4">
+                            Очистить
+                        </button>
+                    </div>
+                </div>
+                <h5 class="mt-3">Результат :&nbsp;&nbsp;</h5>
+                <button type="button" onclick="factorial(event)" class="btn text-white border btn-primary mt-3">
+                    Найти
+                </button>
+            </form>
+        </div>
+    </div>
+<!--------------------------CARD-5------------------------->
+    <div class="container the_card">
+        <div class="row card_header text-center mt-4 bg-primary">
+            <div class="card_button rounded p-2 col-12">
+                <button type="button" class="btn header_btn text-white"><h3>Переворачивает строку</h3></button>
+            </div>
+        </div>
+        <div id="5" class="row card_body">
+            <form class="the_form p-3 border border-dark col-12 rounded">
+                <label class="ml-5">Введите строку или слово</label>
+                <div class="col-8 col-sm-8 col-md-6 col-lg-3 p-0 pr-5 d-flex justify-content-between">
+                    <div class="col-5 p-0">
+                        <small class="form-text text-muted pb-1 ml-2">Число №1</small>
+                        <input type="tel" class="form-control col-lg-10">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="reset" onclick="reseter(event)" class="btn text-white border btn-dark mt-4">
+                            Очистить
+                        </button>
+                    </div>
+                </div>
+                <h5 class="mt-3">Результат :&nbsp;&nbsp;</h5>
+                <button type="button" onclick="reverse(event)" class="btn text-white border btn-primary mt-3">
+                    Найти
+                </button>
+            </form>
+        </div>
+    </div>
+<!--------------------------CARD-6------------------------->
+    <div class="container the_card">
+        <div class="row card_header text-center mt-4 bg-primary">
+            <div class="card_button rounded p-2 col-12">
+                <button type="button" class="btn header_btn text-white"><h3>Делает заглавной первую букву каждого слова
+                    в предложении</h3></button>
+            </div>
+        </div>
+        <div id="6" class="row card_body">
+            <form class="the_form p-3 border border-dark col-12 rounded">
+                <label class="ml-5">Введите строку или слово</label>
+                <div class="col-8 col-sm-8 col-md-6 col-lg-3 p-0 pr-5 d-flex justify-content-between">
+                    <div class="col-5 p-0">
+                        <small class="form-text text-muted pb-1 ml-3">Строка</small>
+                        <input type="tel" class="form-control col-lg-10">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="reset" onclick="reseter(event)" class="btn text-white border btn-dark mt-4">
+                            Очистить
+                        </button>
+                    </div>
+                </div>
+                <h5 class="mt-3">Результат :&nbsp;&nbsp;</h5>
+                <button type="button" onclick="solution(event)" class="btn text-white border btn-primary mt-3">
+                    Найти
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
