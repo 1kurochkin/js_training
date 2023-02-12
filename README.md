@@ -1,1 +1,1 @@
-# Follow to https://flexwappa.github.io/js_training/
+# Follow to https://1kurochkin.github.io/js_training/
